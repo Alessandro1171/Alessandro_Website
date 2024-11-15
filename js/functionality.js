@@ -29,4 +29,6 @@ document.querySelector(".project_popup-close").addEventListener("click", toggleP
 
 function projectItemDetails(projectItem){
     console.log(projectItem);
+    document.querySelector(".pp_thumbmail img").src = projectItem.querySelector(".project_img").src;
+    document.querySelector(".project_popup-body").innerHTML = projectItem.querySelector("project_item-details").innerHTML;
 }
