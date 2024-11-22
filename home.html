@@ -13,21 +13,38 @@
     </head>
     
     <body>
-        <div id="header"></div>
-        <script>
-            fetch('header.html')
-                .then(response => response.text())
-                .then(data => {  document.getElementById('header').innerHTML = data;});
-        </script>
+        
+        <header class='header'>
+            <a href="home.html" class="logo">Alessandro Dare</a>
+
+            <i class="fa-solid fa-bars" id="menu-icon"></i>
+
+               <nav class="navigation">
+                  <ul>
+                     <li><a href="#home" class="active-link">Home</a></li>
+                     <li><a href="#about">About</a></li>
+                     <li><a href="#experience">Experience</a></li>
+                     <li><a href="#services">Services</a></li>
+                     <li><a href="#skills">Skills</a></li>
+                     <li><a href="#project">Projects</a></li>
+                     <li><a href="#contact">Contact</a></li>
+                  </ul>
+               </nav>
+
+               <!-- <a href="contact.html" class="cta-button">If you are looking to hire me</a> -->
+              
+            
+         </header>
+
         <section class="home" id="home">
             <div class="home-img">
                 <img src="images/personal_photo.jpg" alt="">
             </div>
             <div class="home-content">
                 <h1 class="web_title">
-                    Weclome, to the Website of <span>Alessandro Dare</span>span>
+                    Weclome, to the Website of <span>Alessandro Dare</span>
                 </h1>
-                <h3 class="typing-text"> This is the website of <span></span>Alessandro Dare</span></h3>
+                <h3 class="typing-text">I am a:<span></span></h3>
                 <p class="breif_description">
                     This is the website of Alessandro Dare. Alessandro Dare is a recent Computer Science graduate from Concordia University graduating in August of 2024. 
                     Alessandro Dare graduated with high honors with A GPA of 4.08 and made the Honor Roll from 2021 to 2024. 
@@ -36,14 +53,16 @@
                     From web design, to app development, ai design and creation, data base design and development, software development and design debugging testing and many more. 
                     He is driven, committed eager to gain industry experience and new skills and when he starts on a project he doesn't stop until it is done!
                 </p>
+            <div class="home-links">
                 <div class="social-icon">
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a id="first_link" href="#"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="#"><i class="fa-brands fa-github"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook"></i></a>
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 </div>
 
-                <a href="#" class="btn">Looking To Hire Me</a>
+                <a href="#" class="btn-contact" id="hire_me_btn">Looking To Hire Me</a>
+            </div>
             </div>
             
         </section>
@@ -63,15 +82,57 @@
                     Ease of use, simple and effective design, and writing organized, 
                     transparent and fast and low processing code matters to me.
                 </p>
-                <a href="#" class="btn">Read More</a>
+                <div class="read-more-text">
+                  <p>
+                    I started my interest in software development when I took a video game design course in 2015 and then entered in computer science in the CEGEP of 
+                    Dawson college. I gradated Dawson in 2021 after making the honor roll and entered Concordia university in the same year. 
+                    I graduated Concordia in 2024 after making the honor roll for multiple years. During that try I’ve had multiple internships 
+                    and participated in a few coding competitions, budling software and communicating to improve my coding skills. I am looking forward 
+                    to participating in more coding coemptions, design personal projects and looking for active employment in the software development field. 
+                    I am eager to take new challenges nad mater new coding, languages, techniques and APIs along the way. Now in my mid twenties I am eager 
+                    to start making my mark and further explore the industry. 
+                  </p>
+                  <p>
+                    I trying to build applications, induing web development, app design, 
+                    trouble shotting, data base design, AI design and much more! Afterwards the as a web developer in 2015, and since then, 
+                    I've continued to grow and evolve as a developer, taking on new challenges and learning the latest technologies along the way. 
+                    Now, in my early thirties, 7 years after starting my web development journey, I'm building cutting-edge web applications using 
+                    modern technologies such as Next.js, TypeScript, Node.js, Tailwindcss, REST and much more.
+                  </p>
+                  <p>
+                    I am very adaptive and driven. When I work on a project, I use the best tools available to get the job done and won’t stop until a 
+                    product is finished and meets industry standards!
+                  </p>
+                  <p>
+                    In periods where I am not busy my new project, you can find me posting on Facebook, LinkedIn or on Leet code, keeping an eye on what’s new 
+                    in the industry or enjoying life. You can follow me on Facebook or linked where I share my latest developments, or you can follow me on GitHub.
+                  </p>
+                  <p>
+                    Finally, some quick bits about me.
+                  </p>
+                  <div class="list_box">
+                  <ul>
+                    <li>B.S. in Computer Science</li>  
+                    <li>Open to freelance and permanent work</li> 
+                  </ul> 
+                  <ul>
+                    <li>DEC in Computer Science</li>  
+                    <li>Aspiring software developer</li> 
+                  </ul> 
+                  </div>
+                  <p>
+                    I'm available for freelance work, so feel free to reach out to me. No matter the request you can be sure I’ll give my best!
+                  </p>
+                </div>
+                <a href="#" class="btn" onclick="toggleAboutText(event)">Read More</a>
             </div>
         </section>
         <!--Experience-->
         <section class="experience" id = "experience">
-            <h2 class="heading"> <span>Experience/Eudcation</span></h2>
+            <h2 class="heading"> <span>Experience/Eudcation</span><span class="animate scroll" style="--i:1;"></span></h2>
             <div class="experience-row">
                 <div class="experience-col">
-                    <h3 class="experience_title"> Education</h3>
+                    <h3 class="experience_title"> Education <span class="animate scroll" style="--i:2;"></span></h3>
                     <div class="experience-container">
                         <div class="experience-content">
                             <div class="content">
@@ -109,12 +170,12 @@
                                 </p>
                             </div>
                         </div>
+                        <span class="animate scroll" style="--i:3;"></span>
                     </div>
-                    
                 </div>
 
                 <div class="experience-col">
-                    <h3 class="experience_title"> Experience</h3>
+                    <h3 class="experience_title"> Experience <span class="animate scroll" style="--i:5;"></span></h3>
                     <div class="experience-container">
                         <div class="experience-content">
                             <div class="content">
@@ -154,15 +215,15 @@
                                 </p>
                             </div>
                         </div>
+                        <span class="animate scroll" style="--i:6;"></span>
                     </div>
-                    
                 </div>
             </div>
         </section>
         <!--services-->
         <section class="services" id="services">
-            <h2 class="heading">Projects</h2>
-            div class="services-container">
+            <h2 class="heading">Services</h2>
+            <div class="services-container">
                 <div class="service-box">
                     <div class="service-info">
                         <h4>Software Engering</h4>
@@ -177,8 +238,8 @@
                         </pp>
                     </div>
                 </div>
-            </div>
-            <div class="services-container">
+            
+            
                 <div class="service-box">
                     <div class="service-info">
                         <h4>Full Stack Developer</h4>
@@ -191,8 +252,8 @@
                         </pp>
                     </div>
                 </div>
-            </div>
-            <div class="services-container">
+            
+            
                 <div class="service-box">
                     <div class="service-info">
                         <h4>A.I Developer</h4>
@@ -205,8 +266,8 @@
                         </pp>
                     </div>
                 </div>
-            </div>
-            <div class="services-container">
+            
+            
                 <div class="service-box">
                     <div class="service-info">
                         <h4>Database Design/Data Analysis</h4>
@@ -217,8 +278,8 @@
                             projects through Java, Python C# and C++.</pp>
                     </div>
                 </div>
-            </div>
-            <div class="services-container">
+            
+            
                 <div class="service-box">
                     <div class="service-info">
                         <h4>Web Development</h4>
@@ -228,8 +289,8 @@
                             with functionality in PHP and JavaScript.</pp>
                     </div>
                 </div>
-            </div>
-            <div class="services-container">
+            
+            
                 <div class="service-box">
                     <div class="service-info">
                         <h4>Andriod Development</h4>
@@ -579,7 +640,7 @@
                     <a href="#" target="_blank" class="ft_social_contact"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="#" target="_blank" class="ft_social_contact"><i class="fa-brands fa-github"></i></a>
                     <a href="#" target="_blank" class="ft_social_contact"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" target="_blank" class="ft_social_contact"><i class="fa-brands fa-instagram"></i></a
+                    <a href="#" target="_blank" class="ft_social_contact"><i class="fa-brands fa-instagram"></i></a>
                 </div>
               </div>
               <p class="ft_copy">&#169; Crypticalcoder. All rgiht reserved</p>

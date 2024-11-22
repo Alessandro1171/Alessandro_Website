@@ -1,3 +1,17 @@
+function toggleAboutText(event) {
+    event.preventDefault();
+    const extraText = document.querySelector('.read-more-text');
+    const button = document.querySelector('.btn');
+  
+    // Toggle the visibility of extra content
+    if (extraText.style.display === "none" || extraText.style.display === "flex" || extraText.style.display === "") {
+      extraText.style.display = "block"; // Show extra content
+      button.textContent = "Read Less"; // Change button text
+    } else {
+      extraText.style.display = "none"; // Hide extra content
+      button.textContent = "Read More"; // Change button text back
+    }
+  }
 
 let mixerPortfolio = mixitup('.project_container', {
     selectors:{
