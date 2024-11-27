@@ -150,7 +150,14 @@
    min-height: 100vh;
    padding: 5rem 9% 5rem;
  }
-
+.cont {
+   max-width: 1250px;
+   margin-left: auto;
+   margin-right: auto;
+}
+.grid{
+   display: gird;
+}
  .home{
    background-color: var(--bg-color);
    display:flex;
@@ -482,7 +489,7 @@
    color: var(--text-color);
    border-radius: 1rem;
    padding: 2rem;
-   width: 70%;
+   width: 90%;
    margin:auto;
    margin-top: 2rem;
  }
@@ -493,9 +500,11 @@
    gap:1.8rem;
  }
  .skills .container .bar{
+   display: inline;
    margin-bottom: 15px;
    padding:10px;
    border-radius:1rem;
+   vertical-align: bottom;
    background: var(--bg-color);
    transition: 0.3s ease;
    cursor: pointer;
@@ -506,6 +515,7 @@
  }
  .skills .container .bar .info{
    display:flex;
+   vertical-align: bottom;
    flex-direction: column;
    align-items:center;
    gap:1rem;
@@ -520,7 +530,7 @@
    height: 100%;
    width:100%;
  }
- 
+
  /*About*/
  .heading{
    font-size:6rem;
@@ -605,6 +615,7 @@
  }
  /*Project Section */
  .project_container{
+   display: grid;
    grid-template-columns: repeat(3, 330px);
    gap:1.8rem;
    justify-content: center;
@@ -615,11 +626,12 @@
    justify-content: center;
    align-items: center;
    column-gap: .75rem;
+   margin-bottom: 2rem;
  }
  .project_item {
    cursor:pointer;
    color: var(--main-color);
-   padding:25rem 75rem;
+   padding:.25rem .75rem;
    font-weight: 600;
    border-radius: 5rem;
  }
@@ -627,22 +639,35 @@
    background-color: var(--second-bg-color);
    padding: 1.25rem;
    border-radius: .5rem;
+   /*overflow: hidden;
+   display: flex;*/
+   display: flex;
+   flex-direction: column; 
+   justify-content: flex-start;
+   width: auto;
  }
- .portfolio_item-details{
+ .project_item-details{
    display:none;
  }
  .project_img{
    border-radius: .5rem;
    margin-bottom:var(--mb-1);
+   max-width: 100%;
+   /*height: auto;
+   display: block;*/
+   object-fit: cover; 
+   width: 100%; 
+   height: 100%; 
+   flex-grow: 1;
  }
  .project_title{
-   font-size: 500;
+   font-size: 1.75rem;
    font-weight: 600;
    margin-bottom: var(--mb-0-5);
  }
  .project_button{
    color:var(--text-color);
-   font-size: .875rem;
+   font-size: 1.5rem;
    display: flex;
    align-items: center;
    column-gap: .25rem;
@@ -666,12 +691,12 @@
    left: 0;
    right: 0;
    bottom: 0;
-   background-color: #9fe2bf;
+   background-color: rgba(0,0,0,0.3);
    display:flex;
    justify-content: center;
    align-items: center;
    padding: 0 1rem;
-   z-index: var(100);
+   z-index: 100;
    opacity: 0;
    visibility: hidden;
    transition: .3s;
@@ -684,12 +709,13 @@
 
 .project_popup-inner{
    background-color: var(--second-bg-color);
-   widht:900px;
+   width:900px;
    border-radius: .5rem;
    padding: 2.5rem;
    position: relative;
 }
 .project_popup-content{
+   display: grid;
    grid-template-columns: repeat(2, 1fr);
    align-items: center;
    column-gap:3rem;
@@ -704,24 +730,31 @@
 }
 .project_popup-img{
    border-radius: .5rem;
+   width:100%;
+   height: 100%;
+}
+.pp_thumbnail{
+   max-height:45vh;
+   max-width:45vh;
 }
 .project_popup-subtitle{
-   font-size: .875rem;
+   font-size: 1rem;
    margin-bottom: var(--mb-0-25);
 }
 .details_title{
-   font-size: var(--h3-font-size);
+   font-size: 1.7rem;
    font-weight: var(--font-medium);
    margin-bottom: var(--mb-1);
 }
 .details_description{
-   font-size: .875rem;
+   font-size: 1.35rem;
    margin-bottom: var(--mb-2);
 }
 .details_info li {
    margin-bottom: var(--mb-0-75);
    text-transform: capitalize;
-   font-size: .875rem;
+   font-size: 1.1rem;
+   margin-left: 3vh;
 }
 .details_info li:last-child{
    margin-bottom: 0;
@@ -737,6 +770,7 @@
 }
  /*contact*/
  .contact_container{
+   display: grid;
    grid-template-columns: 300px 340px;
    column-gap: 3rem;
    justify-content: center;
@@ -886,6 +920,7 @@ textarea.input{
    padding-top:2rem;
 }
 .footer_container{
+   display: grid;
    grid-template-columns: repeat(3, 1fr);
    column-gap:1.6rem;
 }
@@ -894,16 +929,18 @@ textarea.input{
    padding:3rem 0 3.5rem;
 }
 .ft_title{
-   font-size: var(--h1-font-size);
+   font-size: 3rem;
    margin-bottom: var(--mb-0-25);
 }
 .ft_subtitle{
-   font-size: .875rem;
+   font-size: 1.25rem;
 }
 .ft_links{
    display: flex;
    justify-self:center;
    column-gap:2rem;
+   font-size: 1.25rem;
+   list-style-type: none;
 }
 .ft_link:hover{
    color: var(--text-color)
@@ -912,14 +949,14 @@ textarea.input{
    justify-self: flex-end;;
 }
 .ft_social_contact{
-   font-size: 1.25rem;
+   font-size: 2.35rem;
    margin-right:var(--mb-1-5);
 }
 .ft_social_contact:hover{
    color:var(--text-color);
 }
 .ft_copy{
-   font-size: .75rem;
+   font-size: .80rem;
    text-align: center;
    margin-top: 4.5rem;
 }

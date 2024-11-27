@@ -12,7 +12,7 @@ function toggleAboutText(event) {
       button.textContent = "Read More"; // Change button text back
     }
   }
-
+/**
 let mixerPortfolio = mixitup('.project_container', {
     selectors:{
         target: '.project_card'
@@ -24,12 +24,13 @@ let mixerPortfolio = mixitup('.project_container', {
 const linkWork  = document.querySelectorAll('.project_item')
 
 function activeWork(){
-    linkWork.forEach(L=> l.classList.remove('active-project'))
+    linkWork.forEach(L=> I.classList.remove('active-project'))
     this.classList.add('active-project')
 }
 
-linkWork.forEach(L=>l.addEventListener("click", activeWork))
-
+linkWork.forEach(L=>I.addEventListener("click", activeWork))
+**/
+/**Project popups code**/
 document.addEventListener("click", (e)=>{
     if(e.target.classList.contains("project_button")){
         toggleProjectPopup();
@@ -39,12 +40,13 @@ document.addEventListener("click", (e)=>{
 function toggleProjectPopup(){
     document.querySelector(".project_popup").classList.toggle("open");
 }
-document.querySelector(".project_popup-close").addEventListener("click", toggleProjectPopup)
+document.querySelector(".project_popup-close").addEventListener("click", toggleProjectPopup);
 
 function projectItemDetails(projectItem){
     console.log(projectItem);
-    document.querySelector(".pp_thumbmail img").src = projectItem.querySelector(".project_img").src;
-    document.querySelector(".project_popup-body").innerHTML = projectItem.querySelector("project_item-details").innerHTML;
+    document.querySelector(".pp_thumbnail img").src = projectItem.querySelector(".project_img").src;
+    document.querySelector(".project_popup-subtitle span").innerHTML = projectItem.querySelector(".project_title").innerHTML;
+    document.querySelector(".project_popup-body").innerHTML = projectItem.querySelector(".project_item-details").innerHTML;
 }
 
 
@@ -69,7 +71,7 @@ inputs.forEach((input) =>{
 })
 
 /*Srcoll Section Functionality*/
-const sections = documment.querySelectorAll("section[id]");
+const sections = document.querySelectorAll("section[id]");
 window.addEventListener("scroll", navHighlighter);
 
 function navHighlighter(){
