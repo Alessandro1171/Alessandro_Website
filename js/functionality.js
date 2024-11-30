@@ -51,6 +51,7 @@ function projectItemDetails(projectItem){
 
 
 /*Input function*/
+ 
 const inputs = document.querySelectorAll(".input");
 
 function focusFunc(){
@@ -69,7 +70,115 @@ inputs.forEach((input) =>{
     input.addEventListener("focus", focusFunc);
     input.addEventListener("blur", blurFunc);
 })
+/*
+const emailOption = document.getElementById("email_id_button");
+const phoneOption = document.getElementById("phone_id_button");
+emailActivate = true;
+phoneActivate= false;
 
+emailOption.addEventListener("click", function () {
+        console.log("email Option,  emailActivate:"+emailActivate+"   phoneActivate:"+phoneActivate)
+        if (emailOption.checked) {
+            console.log("Email Clicked")
+            emailActivate = true;
+            phoneActivate = false;
+        }
+    });
+
+phoneOption.addEventListener("click", function () {
+        console.log("phone Option,  emailActivate:"+emailActivate+"   phoneActivate:"+phoneActivate)
+        if (phoneOption.checked) {
+            console.log("Phone Clicked")
+            emailActivate = false;
+            phoneActivate = true;
+        }
+    });*/
+
+/*Contact function*/
+document.addEventListener("DOMContentLoaded", function () {
+    const formCollection = document.getElementsByClassName("contact_form");
+    document.getElementById("submisson_form");
+    const emailOption = document.getElementById("email_id_button");
+    const phoneOption = document.getElementById("phone_id_button");
+  
+    emailActivate = true;
+    phoneActivate= false;
+    console.log("form Collection:"+formCollection);
+    const form = formCollection.item(0);
+    console.log("form:"+form);
+    // Switch to Email
+    emailOption.addEventListener("click", function () {
+        if (phoneActivate) {
+            console.log("Email Clicked")
+            emailActivate = true;
+            phoneActivate = false;
+        }
+    });
+
+    // Switch to Phone
+    phoneOption.addEventListener("click", function () {
+        if (emailActivate) {
+            console.log("Phone Clicked")
+            emailActivate = false;
+            phoneActivate = true;
+        }
+    });
+    
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (emailActivate){
+            console.log("Email event activated")
+            emailjs.init('mWxYZSTQaTDv8xFfL');
+            const pureData = new FormData(form);
+            const sortedData = Object.fromEntries(pureData.entries());
+
+            emailjs.send('service_4kt14sf', 'template_oz6qd3c', sortedData)
+                .then((response) => {
+                    console.log("SUCCESS!", response.status, response.text);
+                    alert("Your message has been sent successfully!");
+                    form.reset(); // Reset the form
+            })
+            .catch((error) => {
+                console.error("FAILED...", error);
+                alert("Failed to send your message. Please try again.");
+            });
+        }
+        else if (phoneActivate){
+            console.log("Phone event activated")
+            const nodemailer = require("nodemailer");
+            // Email transporter
+            const transporter = nodemailer.createTransport({
+               service: "gmail",
+                auth: {
+                    user: "alessdare@gmail.com", // Your Gmail
+                    pass: "Alex0716%", // Your Gmail App Password
+                },
+            });
+            const pureData = new FormData(form);
+            let formString = "";
+            for (const [key, value] of formData.entries()) {
+                formString += `${key}: ${value}\n`;
+            }
+
+            // Send SMS as an email
+            const mailOptions = {
+             from: "alessdare@gmail.com",
+             to: "4382746913@vmobl.com", // Replace with recipient's carrier email-to-SMS gateway
+             subject: "", // Leave empty for SMS
+             text: formString, // SMS content
+            };
+
+            transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.log("Error:", error);
+            } else {
+                console.log("SMS sent:", info.response);
+            }
+            });
+        }
+    });
+
+});
 /*Srcoll Section Functionality*/
 const sections = document.querySelectorAll("section[id]");
 window.addEventListener("scroll", navHighlighter);

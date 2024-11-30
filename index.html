@@ -7,7 +7,7 @@
             Home Page
         </title>
         <link rel="stylesheet" href="style/styles.css">
-        <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -56,13 +56,13 @@
                 </p>
             <div class="home-links">
                 <div class="social-icon">
-                    <a id="first_link" href="#"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#"><i class="fa-brands fa-github"></i></a>
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a id="first_link" href="https://www.linkedin.com/in/alessandro-dare-1b861a223/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Alessandro1171"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.facebook.com/alessandro.dare.12914/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/alessandrodare50/"><i class="fa-brands fa-instagram"></i></a>
                 </div>
 
-                <a href="#" class="btn-contact" id="hire_me_btn">Looking To Hire Me</a>
+                <a href="#contact" class="btn-contact button" id="hire_me_btn">Looking To Hire Me</a>
             </div>
             </div>
             
@@ -565,20 +565,20 @@
                 <div class="contact_content">
                     <div class="contact_info">
                         <div class="contact_card">
-                            <i class="list list-envel-modify con_info-icon"></i>
+                            <i class="uil uil-envelope-edit info_icon"></i>
                             <h3 class="con_info_title">Email </h3>
                             <span class="con_info_card-data">alessdare@gmail.com</span>
-                            <span class="contact_button">
+                            <span id="email_id_button" class="contact_button">
                                 Reach me <i class="uil uil-arrow-right contact_button-icon"> </i>
                             </span>
                         </div>
 
                         <div class="contact_card">
-                            <i class="list list-envel-modify con_info-icon"></i>
+                            <i class="uil uil-whatsapp info_icon"></i>
                             <h3 class="con_info_title">Phone</h3>
                             <span class="con_info_card-data">(438) 274-6913</span>
-                            <span class="contact_button">
-                                Reach me <i class="list list-pointer-right contact_button-icon"> </i>
+                            <span id="phone_id_button" class="contact_button">
+                                Reach me <i class="uil uil-arrow-right contact_button-icon"> </i>
                             </span>
                         </div>
                        
@@ -586,28 +586,28 @@
                     
                 </div>
                 <div class="contact_content">
-                    <form action="" class="contact_form">
+                    <form action="" id="submisson_form" class="contact_form">
                         <div class="form_container">
-                            <input type="text" class="input">
+                            <input type="text" name="contact_name" class="input">
                             <label for="">Name/Username</label>
                             <span>Name/Username</span>
                         </div>
                         <div class="form_container">
-                            <input type="email" class="input">
+                            <input type="email" name="contact_email" class="input">
                             <label for="">Email</label>
                             <span>Email</span>
                         </div>
                         <div class="form_container">
-                            <input type="tel" class="input">
+                            <input type="tel" name="contact_phone" class="input">
                             <label for="">Phone</label>
                             <span>Phone</span>
                         </div>
-                        <div class="form_container text_sec">
-                            <textarea name="" id="" class="input" ></textarea>
+                        <div class="form_container textarea">
+                            <textarea name="message_text" id="" class="input"></textarea>
                             <label for="">Text</label>
                             <span>Text</span>
                         </div>
-                        <button type="submit" class="button"><i class="list list-navigator button_icon"></i>
+                        <button type="submit" class="button"><i class="uil uil-navigator button_icon"></i>
                             Send
                         </button>
                     </form>
@@ -637,15 +637,16 @@
                     </li>
                 </ul>
                 <div class="ft_social_contacts"> 
-                    <a href="#" target="_blank" class="ft_social_contact"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#" target="_blank" class="ft_social_contact"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" target="_blank" class="ft_social_contact"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" target="_blank" class="ft_social_contact"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/alessandro-dare-1b861a223/" target="_blank" class="ft_social_contact"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Alessandro1171" target="_blank" class="ft_social_contact"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.facebook.com/alessandro.dare.12914/" target="_blank" class="ft_social_contact"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/alessandrodare50/" target="_blank" class="ft_social_contact"><i class="fa-brands fa-instagram"></i></a>
                 </div>
               </div>
               <p class="ft_copy">&#169; Crypticalcoder. All rgiht reserved</p>
             </div>
         </footer>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"> </script>
         <!--======== filter js ========-->
         <script src="js/mixitup.min.js"></script>
         <!--======== main js ========-->
