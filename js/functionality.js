@@ -124,8 +124,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
     
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
         if (emailActivate){
             console.log("Email event activated")
             emailjs.init('mWxYZSTQaTDv8xFfL');
@@ -145,36 +145,33 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         else if (phoneActivate){
             console.log("Phone event activated")
-            const nodemailer = require("nodemailer");
             // Email transporter
-            const transporter = nodemailer.createTransport({
-               service: "gmail",
-                auth: {
-                    user: "alessdare@gmail.com", // Your Gmail
-                    pass: "Alex0716%", // Your Gmail App Password
-                },
-            });
+            
             const pureData = new FormData(form);
-            let formString = "";
-            for (const [key, value] of formData.entries()) {
-                formString += `${key}: ${value}\n`;
+            const name  = pureData.get('contact_name');
+            const email  = pureData.get('contact_email');
+            const phone = pureData.get('contact_phone');
+            const message = pureData.get('message_txt');
+            try {
+                const response =  await fetch("http://localhost:3000/send-sms", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({ name, email, phone, message}),
+                });
+        
+                const data = await response.json();
+                if (data.success) {
+                  alert("SMS sent successfully!");
+                } else {
+                  alert("Failed to send SMS: " + data.error);
+                }
+            } 
+            catch (error) {
+                console.error("Error:", error);
+                alert("An error occurred while sending the SMS.");
             }
-
-            // Send SMS as an email
-            const mailOptions = {
-             from: "alessdare@gmail.com",
-             to: "4382746913@vmobl.com", // Replace with recipient's carrier email-to-SMS gateway
-             subject: "", // Leave empty for SMS
-             text: formString, // SMS content
-            };
-
-            transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                console.log("Error:", error);
-            } else {
-                console.log("SMS sent:", info.response);
-            }
-            });
         }
     });
 
