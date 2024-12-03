@@ -70,6 +70,12 @@ inputs.forEach((input) =>{
     input.addEventListener("focus", focusFunc);
     input.addEventListener("blur", blurFunc);
 })
+
+
+
+
+
+
 /*
 const emailOption = document.getElementById("email_id_button");
 const phoneOption = document.getElementById("phone_id_button");
@@ -93,9 +99,26 @@ phoneOption.addEventListener("click", function () {
             phoneActivate = true;
         }
     });*/
+/*Navbar Menu*/
+const menu_icon = document.getElementById("menu-icon");
+const nav = document.getElementById("nav_hidden");
+
+menu_icon.addEventListener("click", function () {
+    // Check the current display style and toggle it
+    console.log("Event used!")
+    if (nav.style.display === "none") {
+        console.log("Display")
+        nav.style.display = "block"; // Show the div
+    } else {
+        console.log("No Display")
+        nav.style.display = "none"; // Hide the div
+    }
+});
 
 /*Contact function*/
 document.addEventListener("DOMContentLoaded", function () {
+    
+ 
     const formCollection = document.getElementsByClassName("contact_form");
     document.getElementById("submisson_form");
     const emailOption = document.getElementById("email_id_button");
